@@ -1,7 +1,31 @@
-import React from 'react';
+import React from "react";
 
-const ProductSlider = () => {
-  return <div>ProductSlider</div>;
+//import swiper react component
+import { Swiper, SwiperSlide } from "swiper/react";
+// import swiper style
+import "swiper/css";
+import "swiper/css/pagination";
+
+//components
+import Product from "../components/Product";
+
+const ProductSlider = ({ data }) => {
+  
+
+  return (
+   <Swiper>
+    <>
+      {data?.map((product)=>{
+        return (
+          <SwiperSlide key={product.id}>
+              <Product product={product}/>
+          </SwiperSlide>
+        )
+      })}
+    </>
+   </Swiper>
+
+  );
 };
 
 export default ProductSlider;
