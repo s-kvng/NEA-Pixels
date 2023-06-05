@@ -3,7 +3,7 @@ import React from 'react';
 import useFetch from '../hooks/useFetch.js';
 
 //import component
-import ProductSlider from '../components/ProductSlider';
+import LatestProducts from '../components/LatestProducts.js';
 
 const Home = () => {
   //get products
@@ -12,13 +12,10 @@ const Home = () => {
 
   return(
 
-    <div className='mb-16'>
-      <div className='container mx-auto'>
-          <h2 className='h2 mb-6 text-center xl:text-left'> Latest Products </h2>
-      </div>
-
-      <ProductSlider data={data}/>
-    </div>
+    <>
+      <LatestProducts data={data}/>
+    </>
+    
   );
 };
 
