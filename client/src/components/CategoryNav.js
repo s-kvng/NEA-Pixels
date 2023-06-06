@@ -11,7 +11,7 @@ const CategoryNav = () => {
 
   return (
     <aside className="hidden lg:flex">
-      <div className="bg-primary flex flex-col w-[286px] lg:w-[220px] xl:w-[286px] h-[500px] rounded-[8px] overflow-hidden">
+      <div className="bg-primary flex flex-col w-[286px] lg:w-[200px] xl:w-[286px] h-[500px] rounded-[8px] overflow-hidden">
           <div className="bg-accent py-4 text-primary uppercase font-semibold flex justify-center items-center">
             Browse Categories
           </div>
