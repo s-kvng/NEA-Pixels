@@ -10,7 +10,7 @@ import promo_img2 from "../img/promo_img2.png";
 
 const Hero = () => {
   return (
-    <section>
+    <section className="mb-10">
       <div className="container mx-auto">
         <div className=" flex flex-col gap-y-[30px] lg:flex-row lg:gap-x-[30px]  xl:flex-row xl:gap-x-[30px]">
           <div>
@@ -31,7 +31,7 @@ const Hero = () => {
             overflow-hidden relative p-6 ">
 
               {/* text */}
-              <div className="flex flex-col max-w-[250px] h-full justify-center">
+              <div className="flex flex-col max-w-[250px] lg:max-w-[210px] h-full justify-center">
                 <div className="text-[20px] uppercase font-meduim leading-tight mb-4">Save 35% all disr cameras</div>
                   <a href="#" className="uppercase text-accent">
                     shop now
@@ -46,11 +46,11 @@ const Hero = () => {
             overflow-hidden relative p-6 ">
 
               {/* text */}
-              <div className="flex flex-col max-w-[250px] h-full justify-center">
+              <div className="flex flex-col max-w-[250px] lg:max-w-[210px] h-full justify-center">
                 <div className="text-[20px] uppercase font-meduim leading-tight mb-4">
                   Save 25% mirrorless cameras
                   </div>
-                  <a href="#" className="uppercase text-accent">
+                  <a href="#" className="uppercase text-accent" alt="img">
                     shop now
                   </a>
               </div>
