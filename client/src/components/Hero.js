@@ -19,16 +19,45 @@ const Hero = () => {
           </div>
 
           {/* Main slider */}
-          <div className="w-full max-w-lg bg-pink-200">
+          <div className="w-full max-w-lg bg-pink-200 lg:max-w-[734px] mx-auto">
             <MainSlider />
           </div>
 
           {/* Promo imgs */}
-          <div>
+          <div className="flex flex-col gap-y-[30px] w-full max-w-lg 
+            mx-auto h-[500px]">
             {/* promo 1 */}
-            <div>promo 1</div>
+            <div className="grad flex-1 h-[250px] rounded-[8px] 
+            overflow-hidden relative p-6 ">
+
+              {/* text */}
+              <div className="flex flex-col max-w-[250px] h-full justify-center">
+                <div className="text-[20px] uppercase font-meduim leading-tight mb-4">Save 35% all disr cameras</div>
+                  <a href="#" className="uppercase text-accent">
+                    shop now
+                  </a>
+              </div>
+
+              {/* img */}
+              <img className="absolute z-20 -top-2 -right-4" src={promo_img1} />
+            </div>
             {/* promo 2 */}
-            <div>promo 2</div>
+            <div className="grad flex-1 h-[250px] rounded-[8px] 
+            overflow-hidden relative p-6 ">
+
+              {/* text */}
+              <div className="flex flex-col max-w-[250px] h-full justify-center">
+                <div className="text-[20px] uppercase font-meduim leading-tight mb-4">
+                  Save 25% mirrorless cameras
+                  </div>
+                  <a href="#" className="uppercase text-accent">
+                    shop now
+                  </a>
+              </div>
+
+              {/* img */}
+              <img className="absolute z-20 -top-2 -right-4" src={promo_img2} />
+            </div>
           </div>
         </div>
       </div>
