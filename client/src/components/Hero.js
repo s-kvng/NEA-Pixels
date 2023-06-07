@@ -31,7 +31,7 @@ const Hero = () => {
             overflow-hidden relative p-6 ">
 
               {/* text */}
-              <div className="flex flex-col max-w-[250px] lg:max-w-[160px] bg-blue-400 h-full justify-center">
+              <div className="flex flex-col max-w-[250px] lg:max-w-[160px] h-full justify-center">
                 <div className="text-[20px] uppercase font-meduim leading-tight mb-4">Save 35% all disr cameras</div>
                   <a href="#" className="uppercase text-accent">
                     shop now
@@ -46,7 +46,7 @@ const Hero = () => {
             overflow-hidden relative p-6 ">
 
               {/* text */}
-              <div className="flex flex-col max-w-[250px] lg:max-w-[160px] bg-blue-400 h-full justify-center">
+              <div className="flex flex-col max-w-[250px] lg:max-w-[160px]  h-full justify-center">
                 <div className="text-[20px] uppercase font-meduim leading-tight mb-4">
                   Save 25% mirrorless cameras
                   </div>
