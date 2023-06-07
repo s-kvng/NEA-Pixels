@@ -19,9 +19,9 @@ const Header = () => {
   const [ catNavMobile , setCatNavMobile ] = useState(false);
 
   return (
-    <header className="bg-primary py-6 fixed w-full z-40 lg:relative lg:mb-[30px]">
+    <header className="bg-primary py-6 md:py-6 w-full z-40 lg:relative lg:mb-[30px]">
       <div className="container mx-auto">
-        <div className="flex flex-row gap-4 lg:items-center justify-center
+        <div className="flex flex-row gap-9 md:gap-7  lg:items-center justify-center
           mb-4 lg:mb-0">
           {/* menu */}
           <div onClick={()=>setCatNavMobile(true)} className="text-3xl lg:hidden cursor-pointer">
@@ -48,9 +48,9 @@ const Header = () => {
           </div>
 
           {/* phone & cart */}
-          <div>
+          <div className="flex items-center gap-x-[10px]">
             {/* phone */}
-            <div>Need help ? Call 05582218741</div>
+            <div className="hidden lg:flex uppercase">Need help ? 05582218741</div>
             {/* cart */}
             <div onClick={()=> setIsOpen(!isOpen)} className="relative cursor-pointer">
               <SlBag className="text-2xl" />
@@ -63,7 +63,7 @@ const Header = () => {
               ${isOpen ? 'right-0' : '-right-full'}
             bg-[#0e0f10] shadow-xl fixed top-0 bottom-0 
             w-full z-10 md:max-w-[500px] transition-all duration-300`}>
-              <Cart />
+              <Cart setIsOpen={setIsOpen}/>
             </div>
           </div>
         </div>
