@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <header className="bg-primary py-6 md:py-6 w-full z-40 lg:relative lg:mb-[30px]">
       <div className="container mx-auto">
-        <div className="flex flex-row gap-9 md:gap-7  lg:items-center justify-center
+        <div className="flex flex-row sm:gap-20 md:gap-60 lg:gap-7  items-center justify-center
           mb-4 lg:mb-0">
           {/* menu */}
           <div onClick={()=>setCatNavMobile(true)} className="text-3xl lg:hidden cursor-pointer">
@@ -43,7 +43,7 @@ const Header = () => {
           </Link>
 
           {/* searchform - show only on desktop */}
-          <div className="hidden  w-full lg:flex lg:max-w-[430px]">
+          <div className="hidden w-full lg:flex lg:max-w-[430px]">
             <SearchForm />
           </div>
 

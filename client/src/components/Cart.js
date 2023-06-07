@@ -7,7 +7,7 @@ const Cart = ({ setIsOpen }) => {
   return <div className="p-8">
     {/* close icon */}
     <div onClick={()=> setIsOpen(false)} className="text-3xl flex justify-end">
-        <FiX />
+        <FiX className='cursor-pointer' />
     </div>
     Cart</div>;
 };

@@ -9,7 +9,7 @@ const CategoryNavMobile = ({ setCatNavMobile }) => {
     
     {/* close icon */}
     <div onClick={()=> setCatNavMobile(false) } className="text-3xl flex justify-end">
-      <FiX />
+      <FiX className='cursor-pointer' />
     </div>
 
     CategoryNavMobileee</div>;
