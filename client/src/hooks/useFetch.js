@@ -13,7 +13,7 @@ const useFetch = (url) => {
         const res = await request.get(url);
         setData(res.data.data);
       } catch (error) {
-        setError(error);
+        setError(error.message);
       }
       setIsLoading(false);
     };

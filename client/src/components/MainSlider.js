@@ -72,14 +72,14 @@ const MainSlider = () => {
                   <div className="mb-2 uppercase text-center lg:text-left">{slide.pretitle}</div>
                   <div
                     className="text-3xl md:text-[46px] font-semibold text-center 
-                  leadin-none lg:text-left lg:mb-8"
+                  leading-none lg:text-left lg:mb-8 mb-4"
                   >
                     <div>{slide.titlePart1}</div>
                     <div>{slide.titlePart2}</div>
                     <div>{slide.titlePart3}</div>
                   </div>
 
-                  <button className="btn btn-accent uppercase mx-auto lg:mx-0">Shop now</button>
+                  <button className="btn btn-accent uppercase mx-auto lg:mx-0 mb-3 md:mb-0">Shop now</button>
                 </div>
 
 
