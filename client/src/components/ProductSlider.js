@@ -1,6 +1,6 @@
 import React from "react";
 
-//import swiper react component
+//import swiper react component/libary
 import { Swiper, SwiperSlide } from "swiper/react";
 // import swiper styles
 import "swiper/css";
