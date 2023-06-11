@@ -20,7 +20,7 @@ const Search = () => {
 
 //get product based on search term
 const {data} = useFetch(`products?populate=*&filters[title][$contains]=${searchTerm}`)
-console.log(data)
+
 
   return (
     <div className="mb-[30px] pt-40 md:pt-5 lg:pt-0">
