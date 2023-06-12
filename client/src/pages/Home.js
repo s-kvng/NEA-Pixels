@@ -9,7 +9,7 @@ import Hero from '../components/Hero.js'
 
 
 const Home = () => {
-  //get products
+  //get products filtered by isNew
   const { data } = useFetch('/products?populate=*&filters[isNew]=true');  
   
 

@@ -39,7 +39,7 @@ const Hero = () => {
               </div>
 
               {/* img */}
-              <img className="absolute z-20 -top-2 -right-4" src={promo_img1} />
+              <img className="absolute z-20 -top-2 -right-4" src={promo_img1}  alt="promo_img"/>
             </div>
             {/* promo 2 */}
             <div className="grad flex-1 h-[250px] rounded-[8px] 
@@ -56,7 +56,7 @@ const Hero = () => {
               </div>
 
               {/* img */}
-              <img className="absolute z-20 -top-2 -right-4" src={promo_img2} />
+              <img className="absolute z-20 -top-2 -right-4" src={promo_img2} alt="promo_img2"/>
             </div>
           </div>
         </div>
