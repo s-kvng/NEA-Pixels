@@ -10,14 +10,14 @@ import Hero from '../components/Hero.js'
 
 const Home = () => {
   //get products filtered by isNew
-  const { data } = useFetch('/products?populate=*&filters[isNew]=true');  
+  const { data , isLoading } = useFetch('/products?populate=*&filters[isNew]=true');  
   
 
   return(
 
     <section>
       <Hero />
-      <LatestProducts data={data}/>
+      <LatestProducts data={data} loading={isLoading}/>
     </section>
     
   );
