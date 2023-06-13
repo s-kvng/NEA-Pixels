@@ -18,6 +18,10 @@ const ProductDetails = () => {
   );
 
 
+  if(!data){
+    return <div>Loading...</div>
+  }
+
   const categoriesTitle = data[0].attributes.categories.data[0].attributes.title;
 
 
@@ -63,7 +67,7 @@ const ProductDetails = () => {
             </div>
           </div>
           {/* related products */}
-          <RelatedProducts categoriesTitle={categoriesTitle} />
+          <RelatedProducts categoriesTitle={categoriesTitle} id={id} />
         </div>
       )}
     </div>

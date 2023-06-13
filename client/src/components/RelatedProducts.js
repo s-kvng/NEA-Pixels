@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //hooks
 import useFetch from "../hooks/useFetch";
@@ -6,16 +6,27 @@ import useFetch from "../hooks/useFetch";
 //components
 import ProductSlider from "./ProductSlider";
 
-const RelatedProducts = ({ categoriesTitle }) => {
+const RelatedProducts = ({ categoriesTitle , id }) => {
+
+  const [lessProducts , setLessProducts] = useState([]);
+
   const { data, isLoading, error } = useFetch(
     `products?populate=*&filters[categories][title]=${categoriesTitle}`
   );
-  console.log(data);
+  
+  // data.forEach(product => {
+    
+  //   if(product.id == id ){
+  //     continue;
+  //   }
+  // });
+
+
 
   return (
     <div className="mb-10">
         <div className="">
-          <h2>Related Products</h2>
+          <h2 className="text-center h2 mb-6 lg:text-left">Related Products</h2>
 
           {isLoading || error ? (
         <span>Loading...</span>
