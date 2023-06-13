@@ -18,6 +18,10 @@ const ProductDetails = () => {
   );
 
 
+  const categoriesTitle = data[0].attributes.categories.data[0].attributes.title;
+
+
+
 
   return (
     <div className=" mb-16 pt-16 lg:pt-[30px]">
@@ -28,7 +32,7 @@ const ProductDetails = () => {
       ) : (
         <div className="container mx-auto">
           {/* text */}
-          <div className="flex flex-col lg:flex-row gap-[30px] mb-[10px]">
+          <div className="flex flex-col lg:flex-row gap-[30px] mb-[60px]">
             <div className="flex-1 lg:max-w-[45%] h-[500px] grad rounded-lg flex justify-center items-center">
               <img
                 src={`http://localhost:1337${data[0].attributes.image.data.attributes.url}`}
@@ -59,7 +63,7 @@ const ProductDetails = () => {
             </div>
           </div>
           {/* related products */}
-          <RelatedProducts />
+          <RelatedProducts categoriesTitle={categoriesTitle} />
         </div>
       )}
     </div>
