@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 //hooks
 import useFetch from "../hooks/useFetch";
@@ -6,21 +6,20 @@ import useFetch from "../hooks/useFetch";
 //components
 import ProductSlider from "./ProductSlider";
 
+
 const RelatedProducts = ({ categoriesTitle , id }) => {
 
-  const [lessProducts , setLessProducts] = useState([]);
 
   const { data, isLoading, error } = useFetch(
     `products?populate=*&filters[categories][title]=${categoriesTitle}`
   );
   
-  // data.forEach(product => {
-    
-  //   if(product.id == id ){
-  //     continue;
-  //   }
-  // });
+  if (!data) {
+    return <div>Loading...</div>;
+  }
 
+  //filter data
+  const filteredData = data.filter((item) => item.id !== parseInt(id) )
 
 
   return (
@@ -31,7 +30,7 @@ const RelatedProducts = ({ categoriesTitle , id }) => {
           {isLoading || error ? (
         <span>Loading...</span>
       ) : (
-        <ProductSlider data={data} />
+        <ProductSlider data={filteredData} />
       )}
         </div>
     </div>

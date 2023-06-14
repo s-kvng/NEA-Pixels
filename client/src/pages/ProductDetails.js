@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 // react hooks
 import { useParams } from "react-router-dom";
@@ -9,23 +9,25 @@ import useFetch from "../hooks/useFetch";
 //components
 import RelatedProducts from "../components/RelatedProducts";
 
+//context API
+import { CartContext } from "../context/CartContext";
+
 const ProductDetails = () => {
+  const { addToCart } = useContext(CartContext);
+
   const { id } = useParams();
-  console.log("id->", id);
+ 
 
   const { data, isLoading, error } = useFetch(
     `/products?populate=*&filters[id][$eq]=${id}`
   );
 
-
-  if(!data){
-    return <div>Loading...</div>
+  if (!data) {
+    return <div>Loading...</div>;
   }
 
-  const categoriesTitle = data[0].attributes.categories.data[0].attributes.title;
-
-
-
+  const categoriesTitle =
+    data[0].attributes.categories.data[0].attributes.title;
 
   return (
     <div className=" mb-16 pt-16 lg:pt-[30px]">
@@ -60,10 +62,13 @@ const ProductDetails = () => {
               {/* price & btn */}
               <div className="flex items-center gap-x-8">
                 {/* price */}
-                <div className="text-accent text-xl font-semibold ">${data[0].attributes.price}</div>
-                <button className="btn btn-accent">Add to cart</button>
+                <div className="text-accent text-xl font-semibold ">
+                  ${data[0].attributes.price}
+                </div>
+                <button onClick={()=> addToCart(data,id)} className="btn btn-accent">
+                  Add to cart
+                </button>
               </div>
-              
             </div>
           </div>
           {/* related products */}
