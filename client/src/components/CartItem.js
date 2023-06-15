@@ -40,10 +40,10 @@ const CartItem = ({ item }) => {
          <div>
          <Qty item={item}/>
          </div>
-         <div>$ {item.attributes.price * item.amount}</div>
+        
         </div>
        
-
+        <div>$ {item.attributes.price * item.amount}</div>
         </div>
          {/* price */}
          <div>

@@ -12,7 +12,7 @@ const CartProvider = ({ children }) => {
   const [ total , setTotal ] = useState(0);
 
 
-  //cart amount
+  //check and update cart amount(badge)
   useEffect(()=>{
 
       const amount = cart.reduce((a,c)=>{
@@ -68,10 +68,45 @@ const CartProvider = ({ children }) => {
   }
 
 
+//handle input for cart
+  const handleInput = (e, id) =>{
+    const value = parseInt(e.target.value);
+    
+    //
+    const singleItem = cart.find((item)=>{
+      return item.id === id;
+    })
+
+    
+   if(singleItem){
+
+    const newCart = cart.map((item)=>{
+
+      if(item.id === id ){
+        if(isNaN(value)){
+          setAmount(1)
+          return { ...item , amount : 1 }
+        }
+        else{
+          setAmount(value)
+          return { ...item , amount : value };
+        }
+      }
+      else{
+        return item;
+      }
+    });
+    setCart(newCart);
+   }
+
+   setIsOpen(true); 
+
+  }
+
 
   return (
 
-    <CartContext.Provider value={{ isOpen , setIsOpen , addToCart, cart , removeFromCart, itemsAmount}}>
+    <CartContext.Provider value={{ isOpen , setIsOpen , addToCart, cart , removeFromCart, itemsAmount, handleInput}}>
         { children }
     </CartContext.Provider>
   );
