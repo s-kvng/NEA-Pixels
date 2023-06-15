@@ -47,15 +47,21 @@ const CartProvider = ({ children }) => {
     setIsOpen(true)
   }
 
-  
-  console.log(cart)
-  
+
+  const removeFromCart = (id) =>{
+
+    const newCart = cart.filter((item)=>{
+      return item.id !== id ;
+    })
+
+    setCart(newCart);
+  }
 
 
 
   return (
 
-    <CartContext.Provider value={{ isOpen , setIsOpen , addToCart, cart}}>
+    <CartContext.Provider value={{ isOpen , setIsOpen , addToCart, cart , removeFromCart}}>
         { children }
     </CartContext.Provider>
   );
