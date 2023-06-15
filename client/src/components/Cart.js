@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useContext } from "react";
 
 //icon
-import { FiX } from 'react-icons/fi';
+import { FiX } from "react-icons/fi";
+
+//
+import { CartContext } from "../context/CartContext";
+
+//
+import CartItem from './CartItem';
 
 const Cart = ({ setIsOpen }) => {
-  return <div className="p-8">
-    {/* close icon */}
-    <div onClick={()=> setIsOpen(false)} className="text-3xl flex justify-end">
-        <FiX className='cursor-pointer' />
+  const { cart } = useContext(CartContext);
+
+  return (
+    <div className="">
+      <div>
+        {/* close icon */}
+        <div
+          onClick={() => setIsOpen(false)}
+          className="text-3xl flex justify-end"
+        >
+          <FiX className="cursor-pointer" />
+        </div>
+        <div>
+            {cart.map((item)=>(
+                <CartItem item={item} key={item.id} />
+            ))}
+        </div>
+      </div>
+     
     </div>
-    Cart</div>;
+  );
 };
 
 export default Cart;

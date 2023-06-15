@@ -15,14 +15,20 @@ const CartProvider = ({ children }) => {
 
   //add to cart
   const addToCart = (item ,id) =>{
+    //parse the id from a string to an int
     const itemId = parseInt(id);
+
+    //destructure the item[0] object to add the amount attribute
     const newItem = { ...item[0] , amount : 1 };
+
+    //retrieve the old cart items and add the new item . ie :"...cart"(spread operator)
     setCart([...cart, newItem])
 
-    //
+    //check if item is already in the cart and return it
     const cartItem = cart.find((item)=>{
       return item.id === itemId;
     })
+
 
     if(cartItem){
       const newCart = cart.map((item)=>{
@@ -36,21 +42,20 @@ const CartProvider = ({ children }) => {
       });
       setCart(newCart);  
     }
-    else{
-      setCart([...cart , newItem])
-    }
+    
 
     setIsOpen(true)
   }
 
   
   console.log(cart)
+  
 
 
 
   return (
 
-    <CartContext.Provider value={{ isOpen , setIsOpen , addToCart}}>
+    <CartContext.Provider value={{ isOpen , setIsOpen , addToCart, cart}}>
         { children }
     </CartContext.Provider>
   );
