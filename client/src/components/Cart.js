@@ -14,15 +14,15 @@ const Cart = ({ setIsOpen }) => {
 
   return (
     <div className="">
-      <div>
+      <div className=""> 
         {/* close icon */}
         <div
           onClick={() => setIsOpen(false)}
-          className="text-3xl flex justify-end"
+          className="text-3xl flex justify-end pb-5 pt-2"
         >
           <FiX className="cursor-pointer" />
         </div>
-        <div>
+        <div className="flex flex-col px-2 gap-y-10"> 
             {cart.map((item)=>(
                 <CartItem item={item} key={item.id} />
             ))}
