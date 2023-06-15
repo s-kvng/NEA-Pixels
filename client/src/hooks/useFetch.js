@@ -3,20 +3,20 @@ import { request } from '../request';
 
 const useFetch = (url) => {
   const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);
       try {
         const res = await request.get(url);
         setData(res.data.data);
+        setIsLoading(false);
         
       } catch (error) {
         setError(error.message);
       }
-      setIsLoading(false);
+      
     };
     fetchData();
   }, [url]);

@@ -15,7 +15,7 @@ import { CartContext } from "../context/CartContext";
 
 const Header = () => {
 
-  const {isOpen , setIsOpen} =  useContext(CartContext);
+  const {isOpen , setIsOpen , itemsAmount} =  useContext(CartContext);
   const [ catNavMobile , setCatNavMobile ] = useState(false);
 
   return (
@@ -57,7 +57,7 @@ const Header = () => {
               {/* amount */}
               <div className="bg-accent absolute w-[16px] h-[16px] top-3 -right-1 flex 
               items-center justify-center rounded-full text-[13px]">
-                2
+                {itemsAmount}
               </div>
             </div>
 
@@ -65,7 +65,7 @@ const Header = () => {
             <div className={`
               ${isOpen ? 'right-0' : '-right-full'}
             bg-[#0e0f10] shadow-xl fixed top-0 bottom-0 
-            w-full z-10 md:max-w-[500px] transition-all duration-300`}>
+            w-full z-10 md:max-w-[500px] transition-all duration-300 overflow-y-scroll`}>
               <Cart setIsOpen={setIsOpen}/>
             </div>
           </div>
