@@ -65,7 +65,7 @@ const Header = () => {
             <div className={`
               ${isOpen ? 'right-0' : '-right-full'}
             bg-[#0e0f10] shadow-xl fixed top-0 bottom-0 
-            w-full z-10 md:max-w-[500px] transition-all duration-300 overflow-y-scroll`}>
+            w-full z-10 md:max-w-[500px] transition-all duration-300`}>
               <Cart setIsOpen={setIsOpen}/>
             </div>
           </div>

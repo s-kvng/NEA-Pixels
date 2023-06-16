@@ -15,13 +15,26 @@ const CartProvider = ({ children }) => {
   //check and update cart amount(badge)
   useEffect(()=>{
 
+    //total amount by accumulating the amount property of each item.
       const amount = cart.reduce((a,c)=>{
         return a + c.amount;
-      }, 0)
+      }, 0)//The initial value of the accumulator (a) is set to 0.
 
       setItemsAmount(amount);
 
   }, [cart])
+
+
+  //
+  useEffect(()=>{
+
+    const total = cart.reduce((a, c)=>{
+      return a + c.attributes.price * c.amount;
+    }, 0)
+
+    setTotal(total);
+  },[cart])
+
 
   //add to cart
   const addToCart = (item ,id) =>{
@@ -57,7 +70,7 @@ const CartProvider = ({ children }) => {
     setIsOpen(true)
   }
 
-
+  //remove cart item
   const removeFromCart = (id) =>{
 
     const newCart = cart.filter((item)=>{
@@ -104,9 +117,47 @@ const CartProvider = ({ children }) => {
   }
 
 
+  //handle select
+  const handleSelect = (e , id) =>{
+    const value = parseInt(e.target.value)
+    const cartItem = cart.find((item)=>{
+      return item.id === id;
+    })
+
+   if(cartItem){
+
+    const newCart = cart.map((item)=>{
+      if(item.id === id){
+        if(isNaN(value)){
+          setAmount(1)
+          return { ...item , amount : 1 };
+        }
+        else{
+          setAmount(value)
+          return { ...item , amount : value };
+        }
+      }
+      else{
+        return item;
+      }
+    })
+
+    setCart(newCart);
+   }
+   
+   setIsOpen(true)
+
+  }
+
+
+  //
+  const clearCart = () => {
+    setCart([]);
+  }
+
   return (
 
-    <CartContext.Provider value={{ isOpen , setIsOpen , addToCart, cart , removeFromCart, itemsAmount, handleInput}}>
+    <CartContext.Provider value={{ isOpen , setIsOpen , addToCart, cart , removeFromCart, itemsAmount, handleInput , handleSelect, total, clearCart}}>
         { children }
     </CartContext.Provider>
   );
