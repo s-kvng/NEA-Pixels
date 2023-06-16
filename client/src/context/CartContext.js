@@ -104,9 +104,43 @@ const CartProvider = ({ children }) => {
   }
 
 
+  //handle select
+  const handleSelect = (e , id) =>{
+    const value = parseInt(e.target.value)
+    const cartItem = cart.find((item)=>{
+      return item.id === id;
+    })
+
+   if(cartItem){
+
+    const newCart = cart.map((item)=>{
+      if(item.id === id){
+        if(isNaN(value)){
+          setAmount(1)
+          return { ...item , amount : 1 };
+        }
+        else{
+          setAmount(value)
+          return { ...item , amount : value };
+        }
+      }
+      else{
+        return item;
+      }
+    })
+
+    setCart(newCart);
+   }
+   
+   setIsOpen(true)
+
+  }
+
+
+
   return (
 
-    <CartContext.Provider value={{ isOpen , setIsOpen , addToCart, cart , removeFromCart, itemsAmount, handleInput}}>
+    <CartContext.Provider value={{ isOpen , setIsOpen , addToCart, cart , removeFromCart, itemsAmount, handleInput , handleSelect}}>
         { children }
     </CartContext.Provider>
   );

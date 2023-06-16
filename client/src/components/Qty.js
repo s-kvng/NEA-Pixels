@@ -6,12 +6,12 @@ import Cart from "./Cart";
 
 const Qty = ({ item }) => {
 
-  const { handleInput } = useContext(CartContext);
+  const { handleInput, handleSelect } = useContext(CartContext);
 
   return (
     <div className=" flex items-center text-primary">
-      {item.amount > 10 ? (
-        <select value={item.amount} className="p-2 rounded-lg w-[100px] h-10 
+      {item.amount < 10 ? (
+        <select onChange={(e)=> handleSelect(e, item.id)} value={item.amount} className="p-2 rounded-lg w-[100px] h-10 
         outline-none text-primary">
 
          <option value="1">1</option>
@@ -23,6 +23,7 @@ const Qty = ({ item }) => {
          <option value="7">7</option>
          <option value="8">8</option>
          <option value="9">9</option>
+         <option value="10">10+</option>
           </select>
       ) : (
         <input
