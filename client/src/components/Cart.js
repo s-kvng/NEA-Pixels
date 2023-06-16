@@ -11,7 +11,7 @@ import CartItem from "./CartItem";
 import { IoArrowForward, IoCartOutline } from "react-icons/io5";
 
 const Cart = ({ setIsOpen }) => {
-  const { cart, total } = useContext(CartContext);
+  const { cart, total, clearCart } = useContext(CartContext);
 
   return (
     <div className="h-full w-full">
@@ -51,7 +51,7 @@ const Cart = ({ setIsOpen }) => {
         <div>
           {cart.length >= 1 ? (
             <div className="flex justify-between gap-x-4 px-3">
-              <button className="btn bg-blue-500 text-primary hover:bg-accent-hover ">
+              <button onClick={()=> clearCart()} className="btn bg-blue-500 text-primary hover:bg-accent-hover ">
                 Clear cart
               </button>
               <button className="btn btn-accent hover:bg-accent-hover text-primary flex-1 px-2 gap-x-2">
