@@ -22,8 +22,8 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-y-6">
           {/*  */} 
 
-          <div className="flex gap-x-10">
-            <a href="#" className="hover:text-white transition-all capitalize">
+          <div className="flex gap-x-10 text-gray-300">
+            <a href="#" className="hover:text-white  transition-all capitalize">
               Returns Policy
               </a>
               <a href="#" className="hover:text-white transition-all">
@@ -36,20 +36,20 @@ const Footer = () => {
           </div>
 
             {/* socials */}
-          <div className=" flex text-2xl justify-center gap-x-10 mb-5">
-          <a href="#" className="hover:text-white transition-all">
+          <div className=" flex text-2xl text-gray-300 justify-center gap-x-10 mb-5">
+          <a href="#" className="hover:text-white text-sky-500 transition-all">
              <FaTwitter />
               </a>
-              <a href="#" className="hover:text-white transition-all">
+              <a href="#" className="hover:text-white text-blue-700 transition-all">
              <FaFacebook />
               </a>
-              <a href="#" className="hover:text-white transition-all">
+              <a href="#" className="hover:text-white text-pink-300 transition-all">
              <FaInstagram />
               </a>
-              <a href="#" className="hover:text-white transition-all">
+              <a href="#" className="hover:text-white text-red-600 transition-all">
              <FaYoutube />
               </a>
-              <a href="#" className="hover:text-white transition-all">
+              <a href="#" className="hover:text-white text-blue-600 transition-all">
              <FaLinkedin />
               </a>
           </div>

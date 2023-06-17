@@ -29,7 +29,7 @@ const CategoryNavMobile = ({ setCatNavMobile }) => {
       ))}
     </div>
 
-    CategoryNavMobileee</div>;
+    </div>;
 };
 
 export default CategoryNavMobile;
