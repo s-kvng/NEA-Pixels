@@ -21,9 +21,9 @@ module.exports = {
         body: '#1D1F23',
         primary: '#151618',
         accent: {
-          DEFAULT: '#F6CD46',
-          hover: '#E1B72E',
-        },
+          DEFAULT: '#40E0D0',
+          hover: '#0EB3A7',
+        },//#E1B72E
       },
       backgroundImage: {
         mainSlider: "url('img/mainSlider_bg.png')",

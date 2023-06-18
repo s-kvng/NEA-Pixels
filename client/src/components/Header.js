@@ -1,7 +1,7 @@
 import React, { useContext , useState } from "react";
 
 //images
-import logo from "../img/logo.png";
+import logo from "../img/nea-pixel2.png";
 import { SlBag } from "react-icons/sl";
 import { FiMenu } from "react-icons/fi";
 //link
