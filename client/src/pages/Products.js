@@ -19,7 +19,6 @@ const Products = () => {
   //fetch category data with that id
   const { data } = useFetch(`products?populate=*&filters[categories]=${id}`);
 
-  console.log(data)
 
   //set title when data is fetch
   useEffect(()=>{
@@ -29,7 +28,7 @@ const Products = () => {
   })
 
   return (
-    <div className="mb-16 pt-40 lg:pt-0">
+    <div className="mb-16 pt-16 lg:pt-0">
       <div className="container mx-auto">
         <div className="flex gap-x-[20px]">
           {/* category nav */}
@@ -40,7 +39,7 @@ const Products = () => {
           <div>
 
               {/* title */}
-              <div className=" text-xl uppercase py-3 text-center lg:text-left">
+              <div className=" text-xl uppercase py-5 text-center lg:text-left">
                 {title} cameras
               </div>
 
